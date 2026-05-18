@@ -1,12 +1,73 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "DataConvert Online | Instant JSON, YAML, TOON, XML Converter",
+	description = "Free, fast, and 100% private data converter. Transform between JSON, YAML, TOON, XML, CSV, and JSONL instantly in your browser. AI-optimized with TOON support."
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://dataconvert.online');
+const socialImageURL = new URL('/favicon.svg', canonicalURL); // Using the cool SVG as OG image
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>DataConvert Online - Free Format Converter</title>
+
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={socialImageURL} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={socialImageURL} />
+
+		<!-- Meta Keywords -->
+		<meta name="keywords" content="data converter, json to yaml, yaml to json, toon format, jsonl converter, xml to json, csv to json, online developer tools, llm token optimization" />
+		<meta name="author" content="devcito" />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Structured Data (JSON-LD) -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "SoftwareApplication",
+				"name": "DataConvert Online",
+				"operatingSystem": "Any",
+				"applicationCategory": "DeveloperApplication",
+				"description": "Professional tool to convert data between JSON, YAML, TOML, XML, CSV, and TOON formats instantly and privately.",
+				"offers": {
+					"@type": "Offer",
+					"price": "0",
+					"priceCurrency": "USD"
+				},
+				"author": {
+					"@type": "Organization",
+					"name": "devcito",
+					"url": "https://devcito.org"
+				}
+			}
+		</script>
 	</head>
 	<body class="bg-slate-950 text-slate-200 font-sans antialiased min-h-screen">
 		<slot />

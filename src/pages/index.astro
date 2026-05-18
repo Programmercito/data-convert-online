@@ -5,13 +5,13 @@ import FormatConverter from '../components/FormatConverter.astro';
 
 <Layout>
 	<!-- Hero Section -->
-	<section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-slate-950 px-4 py-20">
+	<section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-slate-950 px-4 py-12">
 		<!-- Animated Background Orbs -->
 		<div class="absolute top-1/4 -left-20 w-72 h-72 bg-blue-600/30 rounded-full blur-[120px] animate-pulse"></div>
 		<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s;"></div>
 		
-		<div class="relative z-10 text-center max-w-4xl mx-auto">
-			<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 animate-bounce">
+		<div class="relative z-10 text-center max-w-5xl mx-auto">
+			<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-4 animate-bounce">
 				<span class="relative flex h-2 w-2">
 					<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
 					<span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
@@ -19,20 +19,20 @@ import FormatConverter from '../components/FormatConverter.astro';
 				Now with TOON support for AI
 			</div>
 			
-			<h1 class="text-5xl md:text-8xl font-black tracking-tighter text-white mb-8 leading-tight">
+			<h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-6 leading-tight">
 				Transform Data <br/>
 				<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
 					Without Limits.
 				</span>
 			</h1>
 			
-			<p class="text-xl md:text-2xl text-slate-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+			<p class="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto font-light leading-relaxed">
 				The ultimate local-first data converter. 
 				<span class="text-slate-200">JSON, YAML, XML, TOON</span> and more, 
 				processed instantly in your browser.
 			</p>
 			
-			<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
+			<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
 				<a 
 					href="#converter" 
 					class="group relative px-10 py-5 bg-white text-slate-950 font-black rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(59,130,246,0.5)] uppercase tracking-wider text-sm"
@@ -43,33 +43,39 @@ import FormatConverter from '../components/FormatConverter.astro';
 			</div>
 
 			<!-- Quick Pros Grid (IN THE HERO) -->
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-				<div class="flex flex-col items-center p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10">
-					<div class="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center mb-4 border border-blue-500/20">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+				<div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10 text-left">
+					<div class="flex-shrink-0 w-10 h-10 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center border border-blue-500/20">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
 						</svg>
 					</div>
-					<h3 class="text-white font-bold mb-1">Warp Speed</h3>
-					<p class="text-slate-400 text-sm leading-relaxed">Instant character-by-character conversion. Built for speed.</p>
+					<div>
+						<h3 class="text-white font-bold text-sm">Warp Speed</h3>
+						<p class="text-slate-400 text-xs">Instant conversion.</p>
+					</div>
 				</div>
-				<div class="flex flex-col items-center p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10">
-					<div class="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center mb-4 border border-emerald-500/20">
+				<div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10 text-left">
+					<div class="flex-shrink-0 w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center border border-emerald-500/20">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
 						</svg>
 					</div>
-					<h3 class="text-white font-bold mb-1">Total Privacy</h3>
-					<p class="text-slate-400 text-sm leading-relaxed">Your data stays on your device. Zero server uploads.</p>
+					<div>
+						<h3 class="text-white font-bold text-sm">100% Private</h3>
+						<p class="text-slate-400 text-xs">Local processing.</p>
+					</div>
 				</div>
-				<div class="flex flex-col items-center p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10">
-					<div class="w-10 h-10 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center mb-4 border border-purple-500/20">
+				<div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10 text-left">
+					<div class="flex-shrink-0 w-10 h-10 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center border border-purple-500/20">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 						</svg>
 					</div>
-					<h3 class="text-white font-bold mb-1">AI Ready</h3>
-					<p class="text-slate-400 text-sm leading-relaxed">Native TOON & JSONL support. Save on token costs.</p>
+					<div>
+						<h3 class="text-white font-bold text-sm">AI Ready</h3>
+						<p class="text-slate-400 text-xs">TOON & JSONL support.</p>
+					</div>
 				</div>
 			</div>
 		</div>
