@@ -44,75 +44,79 @@ class FormatConverter extends HTMLElement {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 0 0.25rem;
+          padding: 0 0.5rem;
         }
         label {
-          font-weight: 600;
-          color: #1f2937;
-          font-size: 0.875rem;
+          font-weight: 700;
+          color: #94a3b8;
+          font-size: 0.75rem;
           text-transform: uppercase;
-          letter-spacing: 0.025em;
+          letter-spacing: 0.1em;
         }
         select {
           padding: 0.4rem 2rem 0.4rem 0.75rem;
-          border-radius: 0.5rem;
-          border: 1px solid #e5e7eb;
-          background-color: #f9fafb;
+          border-radius: 0.75rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          background-color: rgba(30, 41, 59, 0.5);
           font-size: 0.875rem;
-          color: #374151;
+          color: #f1f5f9;
           cursor: pointer;
           appearance: none;
-          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
           background-repeat: no-repeat;
           background-position: right 0.5rem center;
           background-size: 1.5em 1.5em;
-          transition: border-color 0.2s, box-shadow 0.2s;
+          transition: all 0.2s;
         }
         select:focus {
           outline: none;
           border-color: #3b82f6;
-          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+          background-color: rgba(30, 41, 59, 0.8);
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
         }
         .editor-container {
           position: relative;
-          border-radius: 0.75rem;
+          border-radius: 1rem;
           overflow: hidden;
-          border: 1px solid #e5e7eb;
-          transition: border-color 0.2s, box-shadow 0.2s;
-          background: #ffffff;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          background: rgba(15, 23, 42, 0.6);
+          backdrop-filter: blur(10px);
         }
         .editor-container:focus-within {
-          border-color: #3b82f6;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          border-color: rgba(59, 130, 246, 0.5);
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), inset 0 0 20px rgba(59, 130, 246, 0.05);
+          transform: translateY(-2px);
         }
         textarea {
           width: 100%;
-          min-height: 400px;
-          padding: 1rem;
+          min-height: 450px;
+          padding: 1.25rem;
           border: none;
           font-family: 'Fira Code', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
           font-size: 0.9rem;
-          line-height: 1.5;
+          line-height: 1.6;
           resize: vertical;
           display: block;
-          color: #1f2937;
+          color: #e2e8f0;
           background: transparent;
         }
         textarea:focus {
           outline: none;
         }
         textarea::placeholder {
-          color: #9ca3af;
+          color: #475569;
         }
         .error {
-          background-color: #fef2f2;
-          border: 1px solid #fee2e2;
-          color: #b91c1c;
-          padding: 0.75rem 1rem;
-          border-radius: 0.5rem;
+          background-color: rgba(239, 68, 68, 0.1);
+          border: 1px solid rgba(239, 68, 68, 0.2);
+          color: #fca5a5;
+          padding: 1rem;
+          border-radius: 0.75rem;
           font-size: 0.875rem;
           margin-top: 1rem;
           display: none;
+          backdrop-filter: blur(4px);
           animation: slideIn 0.3s ease-out;
         }
         @keyframes slideIn {
@@ -124,45 +128,64 @@ class FormatConverter extends HTMLElement {
           justify-content: center;
           align-items: center;
           gap: 1rem;
-          margin-top: 1rem;
+          margin-top: 1.5rem;
         }
         button {
-          padding: 0.75rem 2rem;
+          padding: 1rem 2.5rem;
           background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
           color: white;
-          font-weight: 600;
-          border-radius: 0.75rem;
+          font-weight: 700;
+          border-radius: 1rem;
           border: none;
           cursor: pointer;
-          transition: transform 0.1s, box-shadow 0.2s;
-          box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          font-size: 0.875rem;
         }
         button:hover {
-          transform: translateY(-1px);
-          box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4);
+          transform: translateY(-2px) scale(1.02);
+          box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.4);
         }
         button:active {
-          transform: translateY(0);
+          transform: translateY(0) scale(0.98);
         }
         .copy-btn {
           position: absolute;
-          top: 0.5rem;
-          right: 0.5rem;
-          background: rgba(243, 244, 246, 0.8);
-          backdrop-filter: blur(4px);
-          color: #4b5563;
+          top: 0.75rem;
+          right: 0.75rem;
+          background: rgba(30, 41, 59, 0.7);
+          backdrop-filter: blur(8px);
+          color: #94a3b8;
           font-size: 0.7rem;
-          padding: 0.25rem 0.6rem;
-          border-radius: 0.4rem;
+          padding: 0.4rem 0.75rem;
+          border-radius: 0.5rem;
           box-shadow: none;
-          font-weight: 500;
-          border: 1px solid #e5e7eb;
+          font-weight: 600;
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          text-transform: none;
+          letter-spacing: normal;
         }
         .copy-btn:hover {
-          background: #f3f4f6;
-          color: #1f2937;
-          transform: none;
+          background: rgba(51, 65, 85, 0.9);
+          color: #f1f5f9;
+          transform: scale(1.05);
           box-shadow: none;
+        }
+        /* Custom Scrollbar for Textarea */
+        textarea::-webkit-scrollbar {
+          width: 8px;
+        }
+        textarea::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        textarea::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 4px;
+        }
+        textarea::-webkit-scrollbar-thumb:hover {
+          background: rgba(255, 255, 255, 0.2);
         }
       </style>
       <div class="container">
@@ -188,9 +211,6 @@ class FormatConverter extends HTMLElement {
           </div>
         </div>
         <div id="error" class="error"></div>
-        <div class="controls">
-          <button id="convert-btn">Convert Now</button>
-        </div>
       </div>
     `;
     
@@ -204,7 +224,6 @@ class FormatConverter extends HTMLElement {
     const to = this.shadowRoot.getElementById('to');
     const output = this.shadowRoot.getElementById('output');
     const error = this.shadowRoot.getElementById('error');
-    const convertBtn = this.shadowRoot.getElementById('convert-btn');
     const copyBtn = this.shadowRoot.getElementById('copy');
 
     const performConversion = () => {
@@ -225,15 +244,9 @@ class FormatConverter extends HTMLElement {
         error.style.display = 'block';
       }
     };
-
-    convertBtn.addEventListener('click', performConversion);
     
-    // Also convert on input change for better UX
-    input.addEventListener('input', () => {
-        // Debounce or just run? For small files it's fine.
-        performConversion();
-    });
-    
+    // Convert on input change for real-time UX
+    input.addEventListener('input', performConversion);
     from.addEventListener('change', performConversion);
     to.addEventListener('change', performConversion);
 

@@ -32,21 +32,45 @@ import FormatConverter from '../components/FormatConverter.astro';
 				processed instantly in your browser.
 			</p>
 			
-			<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+			<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
 				<a 
 					href="#converter" 
-					class="group relative px-8 py-4 bg-white text-slate-950 font-bold rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+					class="group relative px-10 py-5 bg-white text-slate-950 font-black rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(59,130,246,0.5)] uppercase tracking-wider text-sm"
 				>
 					Start Converting
 					<span class="inline-block transition-transform group-hover:translate-y-1 ml-2">↓</span>
 				</a>
-				<a 
-					href="https://github.com" 
-					target="_blank"
-					class="px-8 py-4 bg-slate-900 text-white font-bold rounded-2xl border border-slate-800 transition-all hover:bg-slate-800"
-				>
-					View Source
-				</a>
+			</div>
+
+			<!-- Quick Pros Grid (IN THE HERO) -->
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+				<div class="flex flex-col items-center p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10">
+					<div class="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center mb-4 border border-blue-500/20">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+						</svg>
+					</div>
+					<h3 class="text-white font-bold mb-1">Warp Speed</h3>
+					<p class="text-slate-400 text-sm leading-relaxed">Instant character-by-character conversion. Built for speed.</p>
+				</div>
+				<div class="flex flex-col items-center p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10">
+					<div class="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center mb-4 border border-emerald-500/20">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+						</svg>
+					</div>
+					<h3 class="text-white font-bold mb-1">Total Privacy</h3>
+					<p class="text-slate-400 text-sm leading-relaxed">Your data stays on your device. Zero server uploads.</p>
+				</div>
+				<div class="flex flex-col items-center p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10">
+					<div class="w-10 h-10 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center mb-4 border border-purple-500/20">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+						</svg>
+					</div>
+					<h3 class="text-white font-bold mb-1">AI Ready</h3>
+					<p class="text-slate-400 text-sm leading-relaxed">Native TOON & JSONL support. Save on token costs.</p>
+				</div>
 			</div>
 		</div>
 
@@ -59,60 +83,36 @@ import FormatConverter from '../components/FormatConverter.astro';
 		</div>
 	</section>
 
-	<main class="bg-white">
+	<main class="bg-slate-950">
 		<!-- Converter Section -->
 		<section id="converter" class="max-w-7xl mx-auto px-4 py-24 scroll-mt-20">
-			<div class="text-center mb-12">
-				<h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4">Powerful Conversion</h2>
-				<p class="text-slate-500">Choose your format and watch the magic happen.</p>
+			<div class="text-center mb-16">
+				<h2 class="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter">Powerful Conversion</h2>
+				<p class="text-slate-400 text-xl max-w-2xl mx-auto font-light">
+					The engine is live. Just paste your data and watch it transform in real-time.
+				</p>
 			</div>
 			
-			<div class="bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden">
-				<FormatConverter />
-			</div>
-		</section>
-
-		<!-- Features Grid -->
-		<section class="max-w-7xl mx-auto px-4 py-24 border-t border-slate-100">
-			<div class="grid md:grid-cols-3 gap-12">
-				<div class="group p-8 rounded-3xl transition-all hover:bg-slate-50">
-					<div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 group-hover:rotate-3">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-						</svg>
-					</div>
-					<h3 class="text-2xl font-bold text-slate-900 mb-4">Warp Speed</h3>
-					<p class="text-slate-600 leading-relaxed">Instant character-by-character conversion. Built for developers who value their time.</p>
-				</div>
-				
-				<div class="group p-8 rounded-3xl transition-all hover:bg-slate-50">
-					<div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 group-hover:-rotate-3">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-						</svg>
-					</div>
-					<h3 class="text-2xl font-bold text-slate-900 mb-4">Total Privacy</h3>
-					<p class="text-slate-600 leading-relaxed">Your data stays on your device. Zero server uploads. Zero logs. Zero worries.</p>
-				</div>
-
-				<div class="group p-8 rounded-3xl transition-all hover:bg-slate-50">
-					<div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 group-hover:rotate-3">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-						</svg>
-					</div>
-					<h3 class="text-2xl font-bold text-slate-900 mb-4">AI Ready</h3>
-					<p class="text-slate-600 leading-relaxed">Native TOON & JSONL support. Optimize your prompts and save up to 60% on token costs.</p>
+			<div class="relative p-[1px] rounded-[3rem] bg-gradient-to-b from-blue-500/30 via-purple-500/30 to-pink-500/30 shadow-[0_0_100px_rgba(59,130,246,0.15)] overflow-hidden">
+				<div class="absolute inset-0 bg-slate-900/60 backdrop-blur-3xl rounded-[3rem]"></div>
+				<div class="relative z-10 bg-slate-950/40 rounded-[3rem] p-4 md:p-12">
+					<FormatConverter />
 				</div>
 			</div>
 		</section>
 
-		<footer class="py-12 text-center bg-slate-50 border-t border-slate-100">
-			<p class="text-slate-500 font-medium">
+		<footer class="py-20 text-center border-t border-white/5">
+			<div class="mb-8 flex justify-center gap-6 opacity-30">
+				<span class="text-xs font-mono uppercase tracking-[0.3em]">JSON</span>
+				<span class="text-xs font-mono uppercase tracking-[0.3em]">YAML</span>
+				<span class="text-xs font-mono uppercase tracking-[0.3em]">TOON</span>
+				<span class="text-xs font-mono uppercase tracking-[0.3em]">XML</span>
+			</div>
+			<p class="text-slate-500 font-medium text-lg">
 				hecho con ❤️ por 
-				<a href="https://devcito.org" target="_blank" class="text-blue-600 hover:text-blue-700 transition-colors font-bold">devcito</a>
+				<a href="https://devcito.org" target="_blank" class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 hover:from-blue-300 hover:to-purple-300 transition-all font-black">devcito</a>
 			</p>
-			<p class="text-slate-400 text-xs mt-2 uppercase tracking-widest">&copy; 2026 DataConvert Online</p>
+			<p class="text-slate-600 text-[10px] mt-4 uppercase tracking-[0.5em] font-bold">DataConvert Online &copy; 2026</p>
 		</footer>
 	</main>
 </Layout>
