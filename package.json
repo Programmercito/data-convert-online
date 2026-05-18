@@ -12,6 +12,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.3.3"
+    "@astrojs/tailwind": "^6.0.2",
+    "@toon-format/toon": "^2.2.0",
+    "astro": "^6.3.3",
+    "fast-xml-parser": "^5.8.0",
+    "js-yaml": "^4.1.1",
+    "papaparse": "^5.5.3",
+    "smol-toml": "^1.6.1",
+    "tailwindcss": "^3.4.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
+    "prettier": "^3.8.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.8.0"
   }
 }

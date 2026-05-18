@@ -1,11 +1,124 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import FormatConverter from '../components/FormatConverter.astro';
 ---
 
 <Layout>
-	<Welcome />
+	<!-- Hero Section -->
+	<section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-slate-950 px-4 py-20">
+		<!-- Animated Background Orbs -->
+		<div class="absolute top-1/4 -left-20 w-72 h-72 bg-blue-600/30 rounded-full blur-[120px] animate-pulse"></div>
+		<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s;"></div>
+		
+		<div class="relative z-10 text-center max-w-4xl mx-auto">
+			<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 animate-bounce">
+				<span class="relative flex h-2 w-2">
+					<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+					<span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+				</span>
+				Now with TOON support for AI
+			</div>
+			
+			<h1 class="text-5xl md:text-8xl font-black tracking-tighter text-white mb-8 leading-tight">
+				Transform Data <br/>
+				<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+					Without Limits.
+				</span>
+			</h1>
+			
+			<p class="text-xl md:text-2xl text-slate-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+				The ultimate local-first data converter. 
+				<span class="text-slate-200">JSON, YAML, XML, TOON</span> and more, 
+				processed instantly in your browser.
+			</p>
+			
+			<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+				<a 
+					href="#converter" 
+					class="group relative px-8 py-4 bg-white text-slate-950 font-bold rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+				>
+					Start Converting
+					<span class="inline-block transition-transform group-hover:translate-y-1 ml-2">↓</span>
+				</a>
+				<a 
+					href="https://github.com" 
+					target="_blank"
+					class="px-8 py-4 bg-slate-900 text-white font-bold rounded-2xl border border-slate-800 transition-all hover:bg-slate-800"
+				>
+					View Source
+				</a>
+			</div>
+		</div>
+
+		<!-- Floating Decorative Cards -->
+		<div class="hidden lg:block absolute top-20 right-[10%] rotate-12 opacity-20">
+			<div class="w-48 h-64 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl"></div>
+		</div>
+		<div class="hidden lg:block absolute bottom-20 left-[10%] -rotate-12 opacity-20">
+			<div class="w-48 h-64 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl"></div>
+		</div>
+	</section>
+
+	<main class="bg-white">
+		<!-- Converter Section -->
+		<section id="converter" class="max-w-7xl mx-auto px-4 py-24 scroll-mt-20">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4">Powerful Conversion</h2>
+				<p class="text-slate-500">Choose your format and watch the magic happen.</p>
+			</div>
+			
+			<div class="bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden">
+				<FormatConverter />
+			</div>
+		</section>
+
+		<!-- Features Grid -->
+		<section class="max-w-7xl mx-auto px-4 py-24 border-t border-slate-100">
+			<div class="grid md:grid-cols-3 gap-12">
+				<div class="group p-8 rounded-3xl transition-all hover:bg-slate-50">
+					<div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 group-hover:rotate-3">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+						</svg>
+					</div>
+					<h3 class="text-2xl font-bold text-slate-900 mb-4">Warp Speed</h3>
+					<p class="text-slate-600 leading-relaxed">Instant character-by-character conversion. Built for developers who value their time.</p>
+				</div>
+				
+				<div class="group p-8 rounded-3xl transition-all hover:bg-slate-50">
+					<div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 group-hover:-rotate-3">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+						</svg>
+					</div>
+					<h3 class="text-2xl font-bold text-slate-900 mb-4">Total Privacy</h3>
+					<p class="text-slate-600 leading-relaxed">Your data stays on your device. Zero server uploads. Zero logs. Zero worries.</p>
+				</div>
+
+				<div class="group p-8 rounded-3xl transition-all hover:bg-slate-50">
+					<div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 group-hover:rotate-3">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+						</svg>
+					</div>
+					<h3 class="text-2xl font-bold text-slate-900 mb-4">AI Ready</h3>
+					<p class="text-slate-600 leading-relaxed">Native TOON & JSONL support. Optimize your prompts and save up to 60% on token costs.</p>
+				</div>
+			</div>
+		</section>
+
+		<footer class="py-12 text-center bg-slate-50 border-t border-slate-100">
+			<p class="text-slate-500 font-medium">
+				hecho con ❤️ por 
+				<a href="https://devcito.org" target="_blank" class="text-blue-600 hover:text-blue-700 transition-colors font-bold">devcito</a>
+			</p>
+			<p class="text-slate-400 text-xs mt-2 uppercase tracking-widest">&copy; 2026 DataConvert Online</p>
+		</footer>
+	</main>
 </Layout>
+
+<style>
+	html {
+		scroll-behavior: smooth;
+	}
+</style>
