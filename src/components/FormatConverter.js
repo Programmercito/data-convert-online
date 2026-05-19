@@ -28,9 +28,13 @@ class FormatConverter extends HTMLElement {
           flex-direction: column;
           gap: 2rem;
         }
+        .grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
         @media (min-width: 768px) {
           .grid {
-            display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
           }
@@ -196,7 +200,16 @@ class FormatConverter extends HTMLElement {
               <select id="from">${options}</select>
             </div>
             <div class="editor-container">
-              <textarea id="input" spellcheck="false" placeholder="Paste your source data here..."></textarea>
+              <textarea id="input" spellcheck="false" placeholder="Paste your source data here...">{
+  "project": "Data Convert Online",
+  "status": "Ready",
+  "features": [
+    "JSON to YAML",
+    "CSV to JSON",
+    "Real-time conversion"
+  ],
+  "author": "Gemini CLI"
+}</textarea>
             </div>
           </div>
           <div class="pane">
@@ -258,6 +271,9 @@ class FormatConverter extends HTMLElement {
         copyBtn.textContent = originalText;
       }, 2000);
     });
+
+    // Initial conversion
+    performConversion();
   }
 }
 

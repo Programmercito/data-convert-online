@@ -90,9 +90,13 @@ ${o}`:s||o}function Sa(e,{maxDepth:t=1e3,numbersAsFloat:n=!1}={}){if(gt(e)!=="ob
           flex-direction: column;
           gap: 2rem;
         }
+        .grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
         @media (min-width: 768px) {
           .grid {
-            display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
           }
@@ -258,7 +262,16 @@ ${o}`:s||o}function Sa(e,{maxDepth:t=1e3,numbersAsFloat:n=!1}={}){if(gt(e)!=="ob
               <select id="from">${n}</select>
             </div>
             <div class="editor-container">
-              <textarea id="input" spellcheck="false" placeholder="Paste your source data here..."></textarea>
+              <textarea id="input" spellcheck="false" placeholder="Paste your source data here...">{
+  "project": "Data Convert Online",
+  "status": "Ready",
+  "features": [
+    "JSON to YAML",
+    "CSV to JSON",
+    "Real-time conversion"
+  ],
+  "author": "Gemini CLI"
+}</textarea>
             </div>
           </div>
           <div class="pane">
@@ -274,4 +287,4 @@ ${o}`:s||o}function Sa(e,{maxDepth:t=1e3,numbersAsFloat:n=!1}={}){if(gt(e)!=="ob
         </div>
         <div id="error" class="error"></div>
       </div>
-    `,this.shadowRoot.getElementById("to").value="yaml"}setupListeners(){const t=this.shadowRoot.getElementById("input"),n=this.shadowRoot.getElementById("from"),r=this.shadowRoot.getElementById("to"),i=this.shadowRoot.getElementById("output"),s=this.shadowRoot.getElementById("error"),o=this.shadowRoot.getElementById("copy"),l=()=>{s.style.display="none",s.textContent="";const a=t.value.trim();if(!a){i.value="";return}try{const u=Ru(a,n.value,r.value);i.value=u}catch(u){s.textContent=u.message,s.style.display="block"}};t.addEventListener("input",l),n.addEventListener("change",l),r.addEventListener("change",l),o.addEventListener("click",()=>{navigator.clipboard.writeText(i.value);const a=o.textContent;o.textContent="Copied!",setTimeout(()=>{o.textContent=a},2e3)})}}customElements.define("format-converter",Mu);
+    `,this.shadowRoot.getElementById("to").value="yaml"}setupListeners(){const t=this.shadowRoot.getElementById("input"),n=this.shadowRoot.getElementById("from"),r=this.shadowRoot.getElementById("to"),i=this.shadowRoot.getElementById("output"),s=this.shadowRoot.getElementById("error"),o=this.shadowRoot.getElementById("copy"),l=()=>{s.style.display="none",s.textContent="";const a=t.value.trim();if(!a){i.value="";return}try{const u=Ru(a,n.value,r.value);i.value=u}catch(u){s.textContent=u.message,s.style.display="block"}};t.addEventListener("input",l),n.addEventListener("change",l),r.addEventListener("change",l),o.addEventListener("click",()=>{navigator.clipboard.writeText(i.value);const a=o.textContent;o.textContent="Copied!",setTimeout(()=>{o.textContent=a},2e3)}),l()}}customElements.define("format-converter",Mu);
